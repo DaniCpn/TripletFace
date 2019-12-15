@@ -75,7 +75,9 @@ drive.mount('/content/drive')
 !python -m tripletface.train -s ../dataset/ -m -e 5 -b 64 -i 240
 ```
 
-### 9 - Un des résultats obtenus (epoch 5 qui semble le plus pertinent)
+### 9 - Résultats
+On obtient le model.pt et les différentes visualisations 
+Un des résultats obtenus (epoch 5 qui semble le plus pertinent)
 
  ![TSNE_Latent](https://raw.githubusercontent.com/DaniCpn/TripletFace/master/IA/vizualisation_4.png)
 
@@ -96,6 +98,9 @@ jit_model = torch.jit.trace(model,torch.rand(3, 3, 5, 8))
 torch.jit.save( jit_model, "/content/drive/My Drive/IA/jit_model.pt" )
 ```
 
+## Centroïdes et Tresholds
+
+J'ai travaillé le tutoriel de Kaggle sur PyTorch et essayé de lier cela avec notre dataset et l'appliquer à notre model, mais je n'y suis pas arrivé. Toutes ces notions sont très complexes et très nouvelles et il nous aurait fallu beaucoup plus de séance de cours.
 
 
 ## Architecture
