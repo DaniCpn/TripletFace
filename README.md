@@ -61,12 +61,22 @@ drive.mount('/content/drive')
 !ls
 ```
 
-### 7 - TRAIN
+### 7 - TRAIN (étape très longue, réglée sur 10 epochs) - 5heures
 ```bash
 !python -m tripletface.train -s ../dataset/ -m mode
 ```
 
-### 8 - Resultat
+### 8 - Modèle
+```bash
+from tripletface.core.model import Encoder
+model = Encoder(64)
+weights = torch.load( "/content/TripletFace/mode/model.pt" )['model']
+model.load_state_dict( weights )
+jit_model = torch.jit.trace(model,torch.rand(3, 3, 5, 8))
+torch.jit.save( jit_model, "/content/drive/My Drive/IA/jit_model.pt" )
+```
+
+### 9 - Résultat (exemple)
 
 ![TSNE_Latent](TSNE_Latent.png)
 
