@@ -8,6 +8,67 @@ going to be maintained in any sort.
 
 ![TSNE_Latent](TSNE_Latent.png)
 
+## Différentes étapes du Project
+
+### 1 - Import du projet de Github sur Colab
+```bash
+!git clone https://github.com/DaniCpn/TripletFace.git
+```
+### 2 - Ajout des différents import nécessaires au projet (en vérifiant l'utilisation du GPU)
+```bash
+from __future__ import print_function, division
+
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.optim import lr_scheduler
+from torch.autograd import Variable
+import numpy as np
+import torchvision
+from torchvision import datasets, models, transforms
+import matplotlib.pyplot as plt
+import time
+import os
+import copy
+import csv
+
+plt.ion()  
+
+use_gpu = torch.cuda.is_available()
+if use_gpu:
+    print("Using CUDA")
+```
+
+### 3 -  Installation de TripletTorch
+```bash
+!pip3 install triplettorch
+from triplettorch import HardNegativeTripletMiner
+from triplettorch import AllTripletMiner
+```
+
+### 4 -  Le dataset est sauvegardé sur le drive -> récupération de drive
+```bash
+from google.colab import drive
+drive.mount('/content/drive')
+```
+
+### 5 - Dézippage du dataset
+```bash
+!unzip "/content/drive/My Drive/DatasetIA.zip"
+```
+
+### 6 - Vérification que tout est en ordre
+```bash
+%cd ../content/TripletFace/
+!ls
+```
+
+### 7 - TRAIN
+```bash
+%cd ../content/TripletFace/
+!ls
+```
+
 ## Architecture
 
 The proposed architecture is pretty simple and does not implement state of the
