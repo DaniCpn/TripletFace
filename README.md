@@ -100,7 +100,7 @@ torch.jit.save( jit_model, "/content/drive/My Drive/IA/jit_model.pt" )
 
 ## Centroïdes et Tresholds
 
-J'ai travaillé le tutoriel de Kaggle sur PyTorch et essayé de lier cela avec notre dataset et l'appliquer à notre model, mais je n'y suis pas arrivé. Toutes ces notions sont très complexes et très nouvelles et il nous aurait fallu beaucoup plus de séance de cours.
+J'ai travaillé le tutoriel de Kaggle sur PyTorch et essayé de lier cela avec notre dataset et l'appliquer à notre model, mais je n'y suis pas arrivé. Toutes ces notions sont très complexes et très nouvelles et il nous aurait fallu beaucoup plus de séance de cours pour pouvoir mieux assimiler toutes ces connaissances.
 
 
 ## Architecture
