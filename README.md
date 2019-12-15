@@ -70,9 +70,9 @@ drive.mount('/content/drive')
 
 ### 8 - TRAIN (étape très longue, réglée sur 10 epochs puis 5 epochs car trop long) - 5h / 2h30
 #### -> Batch size modifié de 32 (par défault) à 64 pour une meilleure représentation
-#### -> Input modifié de 224 (par défault) à 240 afin d'apporter une meilleure visualisation mais augmente en contre parti le temps d'entrainement (A augmenter si nécessaire)
+#### -> Input modifié de 224 (par défault) à 250 afin d'apporter une meilleure visualisation mais augmente en contre parti le temps d'entrainement (à augmenter si nécessaire)
 ```bash
-!python -m tripletface.train -s ../dataset/ -m -e 5 -b 64 -i 240
+!python -m tripletface.train -s ../dataset/ -m -e 5 -b 64 -i 250
 ```
 
 ### 9 - Résultats
