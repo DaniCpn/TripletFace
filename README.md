@@ -64,15 +64,15 @@ drive.mount('/content/drive')
 ## Entraînement du modèle avec hyperparamètres modifiés
 
 ### 7 - TRAIN (étape très longue, réglée sur 10 epochs puis 5 epochs car trop long) - 5h / 2h30
--> Batch size modifié de 32 (par défault) à 64 pour une meilleure représentation
--> Input modifié de 224 (par défault) à 240 afin d'apporter une meilleure visualisation mais augmente en contre parti le temps d'entrainement (A augmenter si nécessaire).
+# -> Batch size modifié de 32 (par défault) à 64 pour une meilleure représentation
+# -> Input modifié de 224 (par défault) à 240 afin d'apporter une meilleure visualisation mais augmente en contre parti le temps d'entrainement (A augmenter si nécessaire).
 ```bash
 !python -m tripletface.train -s ../dataset/ -m -e 5 -b 64 -i 240
 ```
 
 ### 8 - Un des résultats obtenus
 
- ![TSNE_Latent](https://raw.githubusercontent.com/DaniCpn/TripletFace/master/model/vizualisation_4.png)
+ ![TSNE_Latent](https://raw.githubusercontent.com/DaniCpn/TripletFace/master/IA/vizualisation_4.png)
 
 ## JIT
 
