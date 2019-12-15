@@ -76,8 +76,8 @@ drive.mount('/content/drive')
 ```
 
 ### 9 - Résultats
-####On obtient le model.pt et les différentes visualisations 
-####Un des résultats obtenus (epoch 5 qui semble le plus pertinent)
+On obtient le model.pt et les différentes visualisations 
+Un des résultats obtenus (epoch 5 qui semble le plus pertinent)
 
  ![TSNE_Latent](https://raw.githubusercontent.com/DaniCpn/TripletFace/master/IA/vizualisation_4.png)
 
