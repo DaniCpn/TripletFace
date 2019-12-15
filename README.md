@@ -95,7 +95,7 @@ model = Encoder(64)
 weights = torch.load( "/content/TripletFace/mode/model.pt" )['model']
 model.load_state_dict( weights )
 jit_model = torch.jit.trace(model,torch.rand(3, 3, 5, 8))
-torch.jit.save( jit_model, "/content/drive/My Drive/IA/jit_model.pt" )
+torch.jit.save( jit_model, "/content/drive/My Drive/IA/jitcompile.pt" )
 ```
 
 ## Centroïdes et Tresholds
