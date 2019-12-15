@@ -61,7 +61,7 @@ drive.mount('/content/drive')
 !ls
 ```
 
-## Entraînement du modèle avec hyperparamètres modifiés
+## Entraînement du modèle avec modifications des hyperparamètres
 
 ### 7 - Installation des librairies du requirements
 ```bash
@@ -70,14 +70,14 @@ drive.mount('/content/drive')
 
 ### 8 - TRAIN (étape très longue, réglée sur 10 epochs puis 5 epochs car trop long) - 5h / 2h30
 #### -> Batch size modifié de 32 (par défault) à 64 pour une meilleure représentation
-#### -> Input modifié de 224 (par défault) à 240 afin d'apporter une meilleure visualisation mais augmente en contre parti le temps d'entrainement (A augmenter si nécessaire).
+#### -> Input modifié de 224 (par défault) à 240 afin d'apporter une meilleure visualisation mais augmente en contre parti le temps d'entrainement (A augmenter si nécessaire)
 ```bash
 !python -m tripletface.train -s ../dataset/ -m -e 5 -b 64 -i 240
 ```
 
 ### 9 - Résultats
-On obtient le model.pt et les différentes visualisations 
-Un des résultats obtenus (epoch 5 qui semble le plus pertinent)
+####On obtient le model.pt et les différentes visualisations 
+####Un des résultats obtenus (epoch 5 qui semble le plus pertinent)
 
  ![TSNE_Latent](https://raw.githubusercontent.com/DaniCpn/TripletFace/master/IA/vizualisation_4.png)
 
