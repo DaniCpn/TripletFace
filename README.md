@@ -6,8 +6,6 @@ The repository contains code for the application of triplet loss training to the
 task of facial recognition. This code has been produced for a lecture and is not
 going to be maintained in any sort.
 
-![TSNE_Latent](TSNE_Latent.png)
-
 ## Différentes étapes du Project
 
 ### 1 - Import du projet de Github sur Colab
@@ -65,9 +63,12 @@ drive.mount('/content/drive')
 
 ### 7 - TRAIN
 ```bash
-%cd ../content/TripletFace/
-!ls
+!python -m tripletface.train -s ../dataset/ -m mode
 ```
+
+### 8 - Resultat
+
+![TSNE_Latent](TSNE_Latent.png)
 
 ## Architecture
 
