@@ -70,7 +70,7 @@ drive.mount('/content/drive')
 !python -m tripletface.train -s ../dataset/ -m -e 5 -b 64 -i 240
 ```
 
-### 8 - Un des résultats obtenus
+### 8 - Un des résultats obtenus (epoch 5 qui semble le plus pertinent)
 
  ![TSNE_Latent](https://raw.githubusercontent.com/DaniCpn/TripletFace/master/IA/vizualisation_4.png)
 
