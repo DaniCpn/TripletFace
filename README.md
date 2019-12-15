@@ -8,11 +8,11 @@ going to be maintained in any sort.
 
 ## Différentes étapes du Project
 
-### 1 - Import du projet de Github sur Colab
+### 1 - Import du projet de Github sur Colab par clonage
 ```bash
 !git clone https://github.com/DaniCpn/TripletFace.git
 ```
-### 2 - Ajout des différents import nécessaires au projet (en vérifiant l'utilisation du GPU)
+### 2 - Ajout des différentes librairies nécessaires au projet (en vérifiant l'utilisation du GPU)
 ```bash
 from __future__ import print_function, division
 
@@ -61,12 +61,27 @@ drive.mount('/content/drive')
 !ls
 ```
 
-### 7 - TRAIN (étape très longue, réglée sur 10 epochs) - 5heures
+## Entraînement du modèle avec hyperparamètres modifiés
+
+### 7 - TRAIN (étape très longue, réglée sur 10 epochs puis 5 epochs car trop long) - 5h / 2h30
+-> Batch size modifié de 32 (par défault) à 64 pour une meilleure représentation
+-> Input modifié de 224 (par défault) à 240 afin d'apporter une meilleure visualisation mais augmente en contre parti le temps d'entrainement (A augmenter si nécessaire).
 ```bash
-!python -m tripletface.train -s ../dataset/ -m mode
+!python -m tripletface.train -s ../dataset/ -m -e 5 -b 64 -i 240
 ```
 
-### 8 - Modèle
+### 8 - Un des résultats obtenus
+
+ ![TSNE_Latent](https://raw.githubusercontent.com/DaniCpn/TripletFace/master/model/vizualisation_4.png)
+
+## JIT
+
+### 1 - Récupération du dossier
+```bash
+!mv /content/TripletFace /content/drive/My\ Drive/IA
+```
+
+### 2 - Compilation du réseau pour une réutilisation rapide
 ```bash
 from tripletface.core.model import Encoder
 model = Encoder(64)
@@ -76,9 +91,7 @@ jit_model = torch.jit.trace(model,torch.rand(3, 3, 5, 8))
 torch.jit.save( jit_model, "/content/drive/My Drive/IA/jit_model.pt" )
 ```
 
-### 9 - Résultat (exemple)
 
-![TSNE_Latent](TSNE_Latent.png)
 
 ## Architecture
 
